@@ -28,7 +28,13 @@ The final simulation run demonstrates the system's ability to navigate three dis
 Final Test Case Result:
 * 0-3s (Normal/Startup): System manages initial start-up oscillations.
 * 3-6s (Sand): Friction dropped to $\mu=0.1$. The graph clearly shows Wheel Speed pulling away from Vehicle Speed. The controller successfully identified the slip and triggered Sand Mode.
-* 6-10s (Rock Garden): Gaussian noise was injected into the wheel sensors. The controller’s signal processing identified the high variance and switched to Rock Mode.
+* 6-10s (Rock Garden): Gaussian noise was injected into the wheel sensors. The controller s signal processing identified the high variance and switched to Rock Mode.
+
+
+![Closed-Loop Performance](./05_Verification/Figure_1.png)
+*Figure 1: MIL Simulation results showing real-time mode switching between Normal, Sand, and Rock modes based on slip and jitter observers.*
+
+---
 
 
 5. Key Skills Demonstrated
