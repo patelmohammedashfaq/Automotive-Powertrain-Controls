@@ -37,6 +37,7 @@ Final Test Case Result:
 * Signal Processing: Implementing real-time standard deviation and slip observers.
 * Calibration: Tuning PID-like damping and inertia parameters to achieve system stability.
 
+```mermaid
 graph LR
     subgraph Controller [ECU: Terrain Response Controller]
         direction TB
