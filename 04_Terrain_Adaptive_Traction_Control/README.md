@@ -79,7 +79,12 @@ graph LR
     Intervention -- "False" --> Sat
     Trq_Sum --> Sat
     Sat --> Out_Trq([out_trq_motor])
-3.2 Plant Subsystem: PLNT_Traction_DynamicsThis models the high-fidelity physics (2200kg SUV) including non-linear tire-road friction.Code snippetgraph LR
+```
+
+3.2 Plant Subsystem: PLNT_Traction_DynamicsThis models the high-fidelity physics (2200kg SUV) including non-linear tire-road friction.
+
+```mermaid
+graph LR
     subgraph Propulsion_Physics [Wheel Dynamics]
         direction LR
         Trq_In([in_trq_motor])
@@ -110,6 +115,7 @@ graph LR
     F_Traction --> Inertia_Eq
     Chassis_Eq --> Out_V([out_v_veh])
     Inertia_Eq --> Out_W([out_w_wheel])
+```
 
 # MIL Verification Fault Report: Traction Control Failure
 
@@ -134,6 +140,7 @@ graph LR
 The provided MIL simulation plot (PLOT_Traction_Split_Mu.png) clearly shows that while the physical plant responded to the ice patch (red dashed line spike), the control logic failed to reduce the blue torque line.
 
 ![MIL Verification Plot](05_Verification/PLOT_Traction_Split_Mu.png)
+
 ---
 
 ## 4. Root Cause Investigation
