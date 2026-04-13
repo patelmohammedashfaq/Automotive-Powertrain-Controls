@@ -23,7 +23,7 @@ The following requirements define the functional and safety boundaries of the Tr
 | **REQ-TRC-02** | Implementation of 0.5 m/s velocity floor for division protection. | `v_ref = max(v, 0.5)` | `MIL_Scenario_LowSpeed` | **PASS** |
 | **REQ-TRC-03** | Target slip ratio calibration set to 0.12 (12%). | `self.K_SLIP_TARGET` | `MIL_Extensive_Batch` | **PASS** |
 | **REQ-TRC-04** | Proportional torque reduction using Kp = 600.0 when slip error > 0. | `P_Reduction` Logic | `MIL_Extensive_Batch` | **PASS** |
-| **REQ-TRC-05** | Output torque saturation between 0.0 Nm and 450.0 Nm. | `np.clip()` Function | `MIL_Hardware_Limit_Check` | **PASS** |
+| **REQ-TRC-05** | Output torque saturation between 0.0 Nm and 450.0 Nm. | `np.clip()` Function | `MIL_Hardware_Limit_Check` | **Unconclusive, Over torque not excited** |
 
 ---
 
@@ -302,7 +302,7 @@ These aspects are recommended for subsequent SIL and HIL validation phases.
 
 The MIL verification results demonstrate that the traction control and torque-limiting function behaves correctly across a wide range of friction conditions and torque demands. The controller intervenes only when required, limits torque in a stable and predictable manner, and allows full torque delivery when traction permits. No failures or unintended behaviours were observed.
 
-**Overall Verdict:** ✅ **PASS – Function Verified**
+**Overall Verdict: **Partial PASS – Function Verified**
 
 
 
@@ -310,5 +310,5 @@ The MIL verification results demonstrate that the traction control and torque-li
 The specific test case for **Black Ice ($\mu = 0.04$)** verifies the closed-loop proportional reduction. When the physical grip limit dropped below the driver's 400 Nm demand, the controller reduced motor torque within one 10ms loop cycle to maintain stability.
 
 
-### 4.5 Final Verdict: PASS
+### 4.5 Final Verdict: Partial PASS
 The Terrain-Adaptive Traction Control System has been successfully verified across its entire operating envelope. Automated batch testing confirms that the system effectively balances driver intent with physical safety limits, maintaining optimal longitudinal slip and vehicle steerability.
